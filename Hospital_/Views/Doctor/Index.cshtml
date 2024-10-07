@@ -1,0 +1,22 @@
+﻿<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-4 mb-3 d-flex">
+            <div class="card" style="width: 18rem;">
+                <img src="~/images/@item.Img" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-9">
+                            <h6>   @item.Name</h6>
+                        </div>
+@*                         <div class="col-3">
+                            <span class="badge text-bg-success">Rate / 5</span>
+                        </div>
+ *@                    </div>
+                    <p class="card-text">Specialization: @item.Specialization</p>
+                    <a href="/Doctor/CompeleteAppointment?doctorid= @item.Id" class="btn btn-primary">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

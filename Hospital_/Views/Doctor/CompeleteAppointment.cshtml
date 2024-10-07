@@ -1,0 +1,32 @@
+﻿<h5 class="card-title">Complete Appointment with @Model.Name</h5>
+<div class="row">
+    <form action="/Doctor/SaveNew" onsubmit="return showMessage();">
+        <label for="PatientName" class="form-label">Patient Name</label>
+        <input type="text" class="form-control" id="PatientName" name="PatientName">
+
+        <label for="DoctorName" class="form-label"></label>
+        <input type="hidden" class="form-control" id="DoctorName" name="DoctorName" value="@Model.Name">
+
+        <label for="date" class="form-label">Appointment Date</label>
+        <input type="date" class="form-control" id="date" name="date">
+
+        <label for="time" class="form-label">Appointment Time</label>
+        <input type="time" class="form-control" id="time" name="time">
+
+        <br>
+
+        <button type="submit" class="btn btn-primary">Complete Appointment</button>
+
+    </form>
+</div>
+
+<script>
+    function showMessage() {
+        const patientName = document.getElementById('PatientName').value;
+        if (!patientName) {
+            alert("Please enter data");
+            return false;  
+        }
+        alert("Your Appointment has been successfully completed , thank you!");
+        return true; // يسمح بإرسال النموذج
+    }</script>
